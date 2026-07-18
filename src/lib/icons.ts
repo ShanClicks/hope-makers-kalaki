@@ -1,0 +1,30 @@
+import {
+  BookOpen,
+  Handshake,
+  HeartHandshake,
+  HeartPulse,
+  Lightbulb,
+  MapPin,
+  Rocket,
+  ShieldCheck,
+  Sparkles,
+  Star,
+  Sunrise,
+  Users,
+  type LucideIcon,
+} from "lucide-react";
+
+export const ICON_MAP: Record<string, LucideIcon> = {
+  BookOpen,
+  Users,
+  Sparkles,
+  HeartPulse,
+  MapPin,
+  Rocket,
+  HeartHandshake,
+  ShieldCheck,
+  Star,
+  Sunrise,
+  Handshake,
+  Lightbulb,
+};
