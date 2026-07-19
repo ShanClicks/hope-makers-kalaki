@@ -12,7 +12,7 @@ export function FeaturedProjects() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl sm:text-4xl">Featured Projects</h2>
           <p className="mt-3 text-base leading-7 text-muted-foreground">
-            A look at some of the initiatives currently underway across the Kalaki sub-region.
+            A look at some of the initiatives currently underway across Kalaki District.
           </p>
         </div>
 

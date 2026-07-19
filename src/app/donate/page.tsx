@@ -5,7 +5,7 @@ import { DonateForm } from "@/components/donate/donate-form";
 
 export const metadata: Metadata = {
   title: "Donate",
-  description: `Support ${SITE_CONFIG.name}'s work in education, women's empowerment, youth, and healthcare across the Kalaki sub-region.`,
+  description: `Support ${SITE_CONFIG.name}'s work in education, women's empowerment, youth, and healthcare across Kalaki District.`,
 };
 
 export default function DonatePage() {
@@ -13,7 +13,7 @@ export default function DonatePage() {
     <>
       <PageHero
         title="Donate"
-        description="Your support helps us reach more families across the Kalaki sub-region. Every contribution, of any size, makes a real difference."
+        description="Your support helps us reach more families across Kalaki District. Every contribution, of any size, makes a real difference."
       />
       <section className="container-app py-16 sm:py-20">
         <DonateForm />

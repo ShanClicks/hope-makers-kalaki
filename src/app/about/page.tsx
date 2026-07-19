@@ -9,7 +9,7 @@ import { TeamSection } from "@/components/about/team-section";
 
 export const metadata: Metadata = {
   title: "About Us",
-  description: `Learn about ${SITE_CONFIG.name}'s mission, values, and the team working to improve lives in the Kalaki sub-region.`,
+  description: `Learn about ${SITE_CONFIG.name}'s mission, values, and the team working to improve lives in Kalaki District.`,
 };
 
 export default function AboutPage() {
@@ -17,7 +17,7 @@ export default function AboutPage() {
     <>
       <PageHero
         title="About Us"
-        description="Learn more about our mission, the values that guide our work, and the team dedicated to improving lives across the Kalaki sub-region."
+        description="Learn more about our mission, the values that guide our work, and the team dedicated to improving lives across Kalaki District."
       />
       <OurStory />
       <MissionVision />

@@ -1,11 +1,11 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { ImageOff } from "lucide-react";
 import { GALLERY_IMAGES } from "@/services/mock";
 import type { GalleryCategory } from "@/types";
 import { cn } from "@/lib/utils";
+import { FullBleedImage } from "@/components/common/full-bleed-image";
 
 const CATEGORIES: { id: GalleryCategory | "all"; label: string }[] = [
   { id: "all", label: "All" },
@@ -61,12 +61,10 @@ export function GalleryGrid() {
             )}
           >
             {!failedImages[image.id] ? (
-              <Image
+              <FullBleedImage
                 src={image.src}
                 alt={image.alt}
-                fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
-                className="object-cover"
                 onError={() => setFailedImages((prev) => ({ ...prev, [image.id]: true }))}
               />
             ) : (

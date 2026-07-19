@@ -5,7 +5,7 @@ export const FOCUS_AREAS: FocusArea[] = [
     id: "education",
     title: "Access to Quality Education",
     description:
-      "We build classrooms, train teachers, and provide scholastic materials so every child in Kalaki has the chance to learn and thrive.",
+      "We support learners with resources, health education, stay-in-school campaigns, mentorship programs, and scholarships.",
     icon: "BookOpen",
     href: "/programs#education",
     gradient: "from-[#0057B8] to-[#3B82F6]",
@@ -23,7 +23,7 @@ export const FOCUS_AREAS: FocusArea[] = [
     id: "youth",
     title: "Youth Empowerment",
     description:
-      "We equip young people with vocational skills, mentorship, and entrepreneurship training to unlock their full potential.",
+      "We equip young people with financial literacy, skilling, modern income-generating farming practices, and sensitization about family setup.",
     icon: "Sparkles",
     href: "/programs#youth",
     gradient: "from-[#102A43] to-[#0057B8]",

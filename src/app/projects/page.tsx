@@ -7,7 +7,7 @@ import { PROJECTS } from "@/services/mock";
 
 export const metadata: Metadata = {
   title: "Our Projects",
-  description: `Browse the projects ${SITE_CONFIG.name} is running across education, women's empowerment, youth, and healthcare in the Kalaki sub-region.`,
+  description: `Browse the projects ${SITE_CONFIG.name} is running across education, women's empowerment, youth, and healthcare in Kalaki District.`,
 };
 
 export default function ProjectsPage() {
@@ -15,7 +15,7 @@ export default function ProjectsPage() {
     <>
       <PageHero
         title="Our Projects"
-        description="A closer look at the initiatives we're running across the Kalaki sub-region, from ongoing work to completed milestones."
+        description="A closer look at the initiatives we're running across Kalaki District, from ongoing work to completed milestones."
       />
 
       <section className="container-app py-16 sm:py-20">

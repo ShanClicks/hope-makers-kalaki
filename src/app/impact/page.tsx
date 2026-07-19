@@ -8,7 +8,7 @@ import { ProgramDistribution } from "@/components/impact/program-distribution";
 
 export const metadata: Metadata = {
   title: "Our Impact",
-  description: `See the measurable impact ${SITE_CONFIG.name} has made across education, women's empowerment, youth, and healthcare in the Kalaki sub-region.`,
+  description: `See the measurable impact ${SITE_CONFIG.name} has made across education, women's empowerment, youth, and healthcare in Kalaki District.`,
 };
 
 export default function ImpactPage() {

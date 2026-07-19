@@ -7,7 +7,7 @@ import { NEWS_ITEMS } from "@/services/mock";
 
 export const metadata: Metadata = {
   title: "News & Events",
-  description: `Stay up to date with ${SITE_CONFIG.name}'s latest news, milestones, and upcoming events in the Kalaki sub-region.`,
+  description: `Stay up to date with ${SITE_CONFIG.name}'s latest news, milestones, and upcoming events in Kalaki District.`,
 };
 
 export default function NewsPage() {
@@ -19,7 +19,7 @@ export default function NewsPage() {
     <>
       <PageHero
         title="News & Events"
-        description="Updates from the field, program milestones, and upcoming events across the Kalaki sub-region."
+        description="Updates from the field, program milestones, and upcoming events across Kalaki District."
       />
 
       <section className="container-app py-16 sm:py-20">

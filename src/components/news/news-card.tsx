@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import { Calendar, MapPin } from "lucide-react";
 import type { NewsItem } from "@/types";
+import { FullBleedImage } from "@/components/common/full-bleed-image";
 
 function formatDate(dateString: string) {
   return new Date(dateString).toLocaleDateString("en-US", {
@@ -20,12 +20,10 @@ export function NewsCard({ item }: { item: NewsItem }) {
     <article className="flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
       <div className="relative flex h-40 items-center justify-center bg-gradient-to-br from-primary to-brand-navy">
         {!imageFailed ? (
-          <Image
+          <FullBleedImage
             src={item.image}
             alt={item.title}
-            fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover"
             onError={() => setImageFailed(true)}
           />
         ) : (

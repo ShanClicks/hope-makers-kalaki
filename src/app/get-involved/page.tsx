@@ -13,7 +13,7 @@ export default function GetInvolvedPage() {
     <>
       <PageHero
         title="Get Involved"
-        description="There are many ways to be part of the change we're building across the Kalaki sub-region."
+        description="There are many ways to be part of the change we're building across Kalaki District."
       />
       <WaysToHelp />
     </>

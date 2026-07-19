@@ -1,8 +1,8 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
-import Image from "next/image";
 import type { Project } from "@/types";
+import { FullBleedImage } from "@/components/common/full-bleed-image";
 
 export function ProjectDetailBanner({
   project,
@@ -18,13 +18,11 @@ export function ProjectDetailBanner({
   return (
     <section className={`relative flex h-64 items-center justify-center bg-gradient-to-br sm:h-80 ${gradient}`}>
       {!imageFailed ? (
-        <Image
+        <FullBleedImage
           src={project.coverImage}
           alt={project.title}
-          fill
-          priority
           sizes="100vw"
-          className="object-cover"
+          priority
           onError={() => setImageFailed(true)}
         />
       ) : (

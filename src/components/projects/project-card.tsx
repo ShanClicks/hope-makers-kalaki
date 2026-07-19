@@ -1,12 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
 import type { Project } from "@/types";
 import { FOCUS_AREAS } from "@/services/mock";
 import { ICON_MAP } from "@/lib/icons";
+import { FullBleedImage } from "@/components/common/full-bleed-image";
 
 export function ProjectCard({ project }: { project: Project }) {
   const [imageFailed, setImageFailed] = useState(false);
@@ -21,12 +21,10 @@ export function ProjectCard({ project }: { project: Project }) {
         }`}
       >
         {!imageFailed ? (
-          <Image
+          <FullBleedImage
             src={project.coverImage}
             alt={project.title}
-            fill
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-            className="object-cover"
             onError={() => setImageFailed(true)}
           />
         ) : Icon ? (

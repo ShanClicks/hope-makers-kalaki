@@ -7,7 +7,7 @@ export function CtaSection() {
         <h2 className="text-3xl text-white sm:text-4xl">Ready to Make a Difference?</h2>
         <p className="max-w-xl text-base leading-7 text-white/80">
           Whether through a donation, volunteering, or a partnership, your support helps us reach
-          more families across the Kalaki sub-region.
+          more families across Kalaki District.
         </p>
         <div className="mt-2 flex flex-col gap-3 sm:flex-row">
           <Link

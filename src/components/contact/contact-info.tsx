@@ -34,6 +34,7 @@ export function ContactInfo() {
           value={SITE_CONFIG.whatsapp}
           href={getWhatsAppLink(SITE_CONFIG.whatsapp, `Hello ${SITE_CONFIG.shortName}, I'd like to get in touch.`)}
           external
+          iconClassName="bg-[#25D366]/10 text-[#25D366]"
         />
         <ContactDetail icon={MapPin} label="Address" value={SITE_CONFIG.address} />
       </div>
@@ -65,16 +66,22 @@ function ContactDetail({
   value,
   href,
   external,
+  iconClassName,
 }: {
   icon: ComponentType<{ className?: string }>;
   label: string;
   value: string;
   href?: string;
   external?: boolean;
+  iconClassName?: string;
 }) {
   const content = (
     <span className="flex items-start gap-3">
-      <span className="flex size-10 shrink-0 items-center justify-center rounded-full bg-secondary text-primary">
+      <span
+        className={`flex size-10 shrink-0 items-center justify-center rounded-full ${
+          iconClassName ?? "bg-secondary text-primary"
+        }`}
+      >
         <Icon className="size-4" />
       </span>
       <span className="flex flex-col">

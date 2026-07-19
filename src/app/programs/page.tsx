@@ -15,7 +15,7 @@ export default function ProgramsPage() {
     <>
       <PageHero
         title="Our Programs"
-        description="Four focus areas, one mission: building a stronger, healthier, and more equitable Kalaki sub-region."
+        description="Four focus areas, one mission: building a stronger, healthier, and more equitable Kalaki District."
       />
       {FOCUS_AREAS.map((area, index) => (
         <ProgramSection key={area.id} area={area} index={index} />

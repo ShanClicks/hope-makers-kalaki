@@ -10,7 +10,7 @@ export function ProgramsOverview() {
         <div className="mx-auto max-w-2xl text-center">
           <h2 className="text-3xl sm:text-4xl">Our Programs</h2>
           <p className="mt-3 text-base leading-7 text-muted-foreground">
-            Four focus areas working together to build a stronger, healthier Kalaki sub-region.
+            Four focus areas working together to build a stronger, healthier Kalaki District.
           </p>
         </div>
 

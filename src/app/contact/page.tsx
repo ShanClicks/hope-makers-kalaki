@@ -3,6 +3,7 @@ import { SITE_CONFIG } from "@/constants/site";
 import { PageHero } from "@/components/common/page-hero";
 import { ContactForm } from "@/components/contact/contact-form";
 import { ContactInfo } from "@/components/contact/contact-info";
+import { LocationMap } from "@/components/contact/location-map";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -21,6 +22,9 @@ export default function ContactPage() {
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]">
           <ContactInfo />
           <ContactForm />
+        </div>
+        <div className="mt-12">
+          <LocationMap />
         </div>
       </section>
     </>

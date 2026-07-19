@@ -9,11 +9,11 @@ export const PROJECTS: Project[] = [
     summary:
       "A demonstration farm raising pigs, goats, and cattle to build sustainable livelihoods and teach modern, income-generating farming skills to the community.",
     description:
-      "The Hope Makers Kalaki Model Farm combines piggery, goat keeping, and cattle rearing to create a sustainable source of income and a hands-on training ground for community members looking to build their own livestock enterprises.",
+      "The Hope Makers Kalaki Model Farm combines piggery, goat keeping, and cattle rearing to create a sustainable source of income and a hands-on training ground for community members looking to build their own livestock enterprises. Our goal is to help 100 farmers get started with 2 piglets each, and 50 goat farmers with 1 goat each, to build sustainable livestock enterprises across Kalaki.",
     location: "Kalaki District",
     coverImage: "/images/projects/model-farm.jpg",
     progress: 0,
-    goalLabel: "Funding goal: TBD",
+    goalLabel: "$20,000 target",
     status: "ongoing",
   },
   {
@@ -24,11 +24,11 @@ export const PROJECTS: Project[] = [
     summary:
       "A savings and credit cooperative helping community members build financial resilience through group savings and access to affordable credit.",
     description:
-      "Our Savings and Credit Cooperative Organization (SACCO) gives community members a safe place to save together and borrow affordably, strengthening financial independence and supporting small business growth across Kalaki.",
+      "Our Savings and Credit Cooperative Organization (SACCO) gives community members a safe place to save together and borrow affordably, strengthening financial independence and supporting small business growth across Kalaki. Youth can borrow at 5% interest for a 6-month term (one farming season), with Hope Makers Kalaki supervising and training each chosen venture to promote financial literacy and accountability.",
     location: "Kalaki District",
     coverImage: "/images/projects/sacco.jpg",
     progress: 0,
-    goalLabel: "Funding goal: TBD",
+    goalLabel: "$10,000 target",
     status: "ongoing",
   },
   {
@@ -39,11 +39,11 @@ export const PROJECTS: Project[] = [
     summary:
       "Producing and distributing reusable sanitary pads so girls and women can manage menstrual health with dignity, without missing school or work.",
     description:
-      "Through this initiative, we make and distribute reusable sanitary pads to girls and women across Kalaki, helping remove a major barrier to school attendance and daily life while promoting menstrual health education.",
+      "Through this initiative, we make and distribute reusable sanitary pads to girls and women across Kalaki, helping remove a major barrier to school attendance and daily life while promoting menstrual health education. Our goal is to provide 4,500 reusable pads to 1,500 teenage school-going girls across Kakure Subcounty schools.",
     location: "Kalaki District",
     coverImage: "/images/projects/menstrual-hygiene.jpg",
     progress: 0,
-    goalLabel: "Funding goal: TBD",
+    goalLabel: "$3,500 target",
     status: "ongoing",
   },
   {

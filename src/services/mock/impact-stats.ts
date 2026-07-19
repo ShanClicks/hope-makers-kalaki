@@ -1,12 +1,13 @@
 import type { AnnualGrowthDatum, ChartDatum, ImpactStat } from "@/types";
 
 export const IMPACT_STATS: ImpactStat[] = [
-  { id: "children", label: "Children Supported", value: 4820, suffix: "+", icon: "BookOpen" },
-  { id: "women", label: "Women Empowered", value: 2150, suffix: "+", icon: "Users" },
+  { id: "children", label: "Children Supported", value: 820, suffix: "+", icon: "BookOpen" },
+  { id: "women", label: "Women Empowered", value: 650, suffix: "+", icon: "Users" },
+  // TODO: client-provided figure (1200) exceeds their own "under 1,000" constraint — flagged, awaiting clarification. Still showing old placeholder.
   { id: "youth", label: "Youth Trained", value: 1690, suffix: "+", icon: "Sparkles" },
-  { id: "mothers", label: "Mothers Reached", value: 3340, suffix: "+", icon: "HeartPulse" },
-  { id: "communities", label: "Communities Served", value: 38, suffix: "", icon: "MapPin" },
-  { id: "projects", label: "Active Projects", value: 24, suffix: "", icon: "Rocket" },
+  { id: "mothers", label: "Mothers Reached", value: 380, suffix: "+", icon: "HeartPulse" },
+  { id: "communities", label: "Communities Served", value: 11, suffix: "", icon: "MapPin" },
+  { id: "projects", label: "Active Projects", value: 9, suffix: "", icon: "Rocket" },
 ];
 
 export const BENEFICIARY_DISTRIBUTION: ChartDatum[] = [

@@ -12,8 +12,8 @@ export function MissionSnippet() {
         <h2 className="text-3xl sm:text-4xl">Who We Are</h2>
         <p className="text-base leading-7 text-muted-foreground sm:text-lg">
           We believe lasting change starts with the community itself. Our work is guided by{" "}
-          {valueNames} — principles that shape every program we run across the Kalaki
-          sub-region.
+          {valueNames} — principles that shape every program we run across Kalaki
+          District.
         </p>
         <div className="flex flex-wrap items-center justify-center gap-3 pt-2">
           {CORE_VALUES.map((value) => {
