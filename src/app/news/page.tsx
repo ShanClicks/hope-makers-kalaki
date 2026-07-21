@@ -3,6 +3,7 @@ import { SITE_CONFIG } from "@/constants/site";
 import { PageHero } from "@/components/common/page-hero";
 import { CtaSection } from "@/components/common/cta-section";
 import { NewsCard } from "@/components/news/news-card";
+import { Reveal } from "@/components/common/reveal";
 import { NEWS_ITEMS } from "@/services/mock";
 
 export const metadata: Metadata = {
@@ -24,8 +25,10 @@ export default function NewsPage() {
 
       <section className="container-app py-16 sm:py-20">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {sortedItems.map((item) => (
-            <NewsCard key={item.id} item={item} />
+          {sortedItems.map((item, index) => (
+            <Reveal key={item.id} delay={(index % 3) * 0.08}>
+              <NewsCard item={item} />
+            </Reveal>
           ))}
         </div>
       </section>

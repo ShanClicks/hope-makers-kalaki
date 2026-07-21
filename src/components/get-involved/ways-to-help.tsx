@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowRight, HandHeart, Handshake, Heart, Megaphone } from "lucide-react";
+import { Reveal } from "@/components/common/reveal";
 
 const WAYS_TO_HELP = [
   {
@@ -44,26 +45,25 @@ export function WaysToHelp() {
   return (
     <section className="container-app py-16 sm:py-20">
       <div className="grid gap-6 sm:grid-cols-2">
-        {WAYS_TO_HELP.map((way) => {
+        {WAYS_TO_HELP.map((way, index) => {
           const Icon = way.icon;
           return (
-            <div
-              key={way.id}
-              className="flex flex-col gap-4 rounded-xl border border-border bg-card p-8 shadow-sm transition-shadow hover:shadow-md"
-            >
-              <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
-                <Icon className="size-6" />
-              </span>
-              <h3 className="text-xl">{way.title}</h3>
-              <p className="flex-1 text-sm leading-6 text-muted-foreground">{way.description}</p>
-              <Link
-                href={way.href}
-                className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-brand-royal-dark"
-              >
-                {way.cta}
-                <ArrowRight className="size-4" />
-              </Link>
-            </div>
+            <Reveal key={way.id} delay={index * 0.08}>
+              <div className="flex h-full flex-col gap-4 rounded-xl border border-border bg-card p-8 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
+                  <Icon className="size-6" />
+                </span>
+                <h3 className="text-xl">{way.title}</h3>
+                <p className="flex-1 text-sm leading-6 text-muted-foreground">{way.description}</p>
+                <Link
+                  href={way.href}
+                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-brand-royal-dark"
+                >
+                  {way.cta}
+                  <ArrowRight className="size-4" />
+                </Link>
+              </div>
+            </Reveal>
           );
         })}
       </div>

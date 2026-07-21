@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Poppins, Open_Sans } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/common/theme-provider";
+import { MotionProvider } from "@/components/common/motion-provider";
 import { QueryProvider } from "@/components/common/query-provider";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
@@ -71,19 +72,21 @@ export default function RootLayout({
       className={`${poppins.variable} ${openSans.variable}`}
     >
       <body className="flex min-h-screen flex-col antialiased">
-        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
-          <QueryProvider>
-            <a href="#main-content" className="sr-only-focusable">
-              Skip to main content
-            </a>
-            <Navbar />
-            <main id="main-content" className="flex-1">
-              {children}
-            </main>
-            <Footer />
-            <WhatsAppButton />
-            <Toaster />
-          </QueryProvider>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
+          <MotionProvider>
+            <QueryProvider>
+              <a href="#main-content" className="sr-only-focusable">
+                Skip to main content
+              </a>
+              <Navbar />
+              <main id="main-content" className="flex-1">
+                {children}
+              </main>
+              <Footer />
+              <WhatsAppButton />
+              <Toaster />
+            </QueryProvider>
+          </MotionProvider>
         </ThemeProvider>
       </body>
     </html>

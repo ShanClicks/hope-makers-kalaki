@@ -7,7 +7,7 @@ export const SITE_CONFIG = {
   vision:
     "A resilient and empowered Kalaki where every youth, woman, and family lives with dignity, opportunity, and hope.",
   url: "https://www.hopemakerskalaki.org",
-  email: "info@hopemakerskalaki.org",
+  email: "hopemakerskalaki@gmail.com",
   phone: "+256 778 837 518",
   whatsapp: "+256778837518",
   address: "Apaari Trading Center, Kakure Subcounty, Kalaki District, Teso Sub-region, Eastern Uganda",

@@ -3,6 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaWhatsapp, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { SITE_CONFIG } from "@/constants/site";
 import { getWhatsAppLink } from "@/lib/utils";
+import { Reveal } from "@/components/common/reveal";
 
 const SOCIAL_LINKS = [
   { label: "Facebook", href: SITE_CONFIG.social.facebook, icon: FaFacebook },
@@ -15,7 +16,7 @@ const SOCIAL_LINKS = [
 export function ContactInfo() {
   return (
     <div className="flex flex-col gap-8">
-      <div className="flex flex-col gap-6">
+      <Reveal className="flex flex-col gap-6">
         <ContactDetail
           icon={Mail}
           label="Email"
@@ -37,9 +38,9 @@ export function ContactInfo() {
           iconClassName="bg-[#25D366]/10 text-[#25D366]"
         />
         <ContactDetail icon={MapPin} label="Address" value={SITE_CONFIG.address} />
-      </div>
+      </Reveal>
 
-      <div className="flex flex-col gap-3">
+      <Reveal className="flex flex-col gap-3" delay={0.1}>
         <span className="text-sm font-semibold text-foreground">Follow Us</span>
         <div className="flex gap-3">
           {SOCIAL_LINKS.map(({ label, href, icon: Icon }) => (
@@ -49,13 +50,13 @@ export function ContactInfo() {
               target="_blank"
               rel="noopener noreferrer"
               aria-label={label}
-              className="flex size-10 items-center justify-center rounded-full bg-secondary text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+              className="flex size-10 items-center justify-center rounded-full bg-secondary text-primary transition-all duration-300 hover:-translate-y-0.5 hover:bg-primary hover:text-primary-foreground"
             >
               <Icon className="size-4" />
             </a>
           ))}
         </div>
-      </div>
+      </Reveal>
     </div>
   );
 }

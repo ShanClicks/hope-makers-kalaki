@@ -1,9 +1,10 @@
 import Link from "next/link";
+import { Reveal } from "@/components/common/reveal";
 
 export function CtaSection() {
   return (
     <section className="bg-gradient-to-r from-primary to-accent">
-      <div className="container-app flex flex-col items-center gap-5 py-16 text-center sm:py-20">
+      <Reveal className="container-app flex flex-col items-center gap-5 py-16 text-center sm:py-20">
         <h2 className="text-3xl text-white sm:text-4xl">Ready to Make a Difference?</h2>
         <p className="max-w-xl text-base leading-7 text-white/80">
           Whether through a donation, volunteering, or a partnership, your support helps us reach
@@ -23,7 +24,7 @@ export function CtaSection() {
             Get Involved
           </Link>
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

@@ -3,6 +3,7 @@ import { SITE_CONFIG } from "@/constants/site";
 import { PageHero } from "@/components/common/page-hero";
 import { CtaSection } from "@/components/common/cta-section";
 import { ProjectCard } from "@/components/projects/project-card";
+import { Reveal } from "@/components/common/reveal";
 import { PROJECTS } from "@/services/mock";
 
 export const metadata: Metadata = {
@@ -20,8 +21,10 @@ export default function ProjectsPage() {
 
       <section className="container-app py-16 sm:py-20">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+          {PROJECTS.map((project, index) => (
+            <Reveal key={project.id} delay={(index % 3) * 0.08}>
+              <ProjectCard project={project} />
+            </Reveal>
           ))}
         </div>
       </section>

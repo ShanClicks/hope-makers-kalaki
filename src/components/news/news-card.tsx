@@ -17,7 +17,7 @@ export function NewsCard({ item }: { item: NewsItem }) {
   const [imageFailed, setImageFailed] = useState(false);
 
   return (
-    <article className="flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-shadow hover:shadow-md">
+    <article className="flex flex-col overflow-hidden rounded-xl border border-border bg-card shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg">
       <div className="relative flex h-40 items-center justify-center bg-gradient-to-br from-primary to-brand-navy">
         {!imageFailed ? (
           <FullBleedImage

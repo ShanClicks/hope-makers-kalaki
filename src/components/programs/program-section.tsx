@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import type { FocusArea } from "@/types";
 import { IMPACT_STATS, PROJECTS } from "@/services/mock";
 import { ICON_MAP } from "@/lib/icons";
+import { Reveal } from "@/components/common/reveal";
 
 const STAT_ID_BY_FOCUS_AREA: Record<string, string> = {
   education: "children",
@@ -24,15 +25,16 @@ export function ProgramSection({ area, index }: { area: FocusArea; index: number
     >
       <div className="container-app">
         <div className="grid items-center gap-10 lg:grid-cols-2">
-          <div
+          <Reveal
             className={`flex h-64 items-center justify-center rounded-2xl bg-gradient-to-br sm:h-80 ${area.gradient} ${
               isReversed ? "lg:order-2" : ""
             }`}
+            y={0}
           >
             {Icon ? <Icon className="size-16 text-white/90" /> : null}
-          </div>
+          </Reveal>
 
-          <div className={`flex flex-col gap-4 ${isReversed ? "lg:order-1" : ""}`}>
+          <Reveal className={`flex flex-col gap-4 ${isReversed ? "lg:order-1" : ""}`} delay={0.1}>
             <h2 className="text-3xl sm:text-4xl">{area.title}</h2>
             <p className="text-base leading-7 text-muted-foreground sm:text-lg">
               {area.description}
@@ -61,7 +63,7 @@ export function ProgramSection({ area, index }: { area: FocusArea; index: number
                 ))}
               </div>
             ) : null}
-          </div>
+          </Reveal>
         </div>
       </div>
     </section>

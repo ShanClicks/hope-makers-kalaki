@@ -1,10 +1,11 @@
 import { SITE_CONFIG } from "@/constants/site";
+import { Reveal } from "@/components/common/reveal";
 
 export function OurStory() {
   return (
     <section className="bg-muted/40 py-16 sm:py-20">
       <div className="container-app">
-        <div className="mx-auto max-w-3xl">
+        <Reveal className="mx-auto max-w-3xl">
           <h2 className="text-center text-3xl sm:text-4xl">Our Story</h2>
 
           <div className="mt-8 flex flex-col gap-5 text-base leading-7 text-muted-foreground">
@@ -41,7 +42,7 @@ export function OurStory() {
             &ldquo;We believe every young girl and boy in Kalaki deserves a future they choose for
             themselves, not one decided for them.&rdquo;
           </blockquote>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

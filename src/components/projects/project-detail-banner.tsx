@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, type ReactNode } from "react";
+import { motion } from "framer-motion";
 import type { Project } from "@/types";
 import { FullBleedImage } from "@/components/common/full-bleed-image";
 
@@ -16,7 +17,12 @@ export function ProjectDetailBanner({
   const [imageFailed, setImageFailed] = useState(false);
 
   return (
-    <section className={`relative flex h-64 items-center justify-center bg-gradient-to-br sm:h-80 ${gradient}`}>
+    <motion.section
+      className={`relative flex h-64 items-center justify-center bg-gradient-to-br sm:h-80 ${gradient}`}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       {!imageFailed ? (
         <FullBleedImage
           src={project.coverImage}
@@ -28,6 +34,6 @@ export function ProjectDetailBanner({
       ) : (
         icon
       )}
-    </section>
+    </motion.section>
   );
 }

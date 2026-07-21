@@ -4,6 +4,7 @@ import { PageHero } from "@/components/common/page-hero";
 import { ContactForm } from "@/components/contact/contact-form";
 import { ContactInfo } from "@/components/contact/contact-info";
 import { LocationMap } from "@/components/contact/location-map";
+import { Reveal } from "@/components/common/reveal";
 
 export const metadata: Metadata = {
   title: "Contact Us",
@@ -21,11 +22,13 @@ export default function ContactPage() {
       <section className="container-app py-16 sm:py-20">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)]">
           <ContactInfo />
-          <ContactForm />
+          <Reveal delay={0.1}>
+            <ContactForm />
+          </Reveal>
         </div>
-        <div className="mt-12">
+        <Reveal className="mt-12" delay={0.15}>
           <LocationMap />
-        </div>
+        </Reveal>
       </section>
     </>
   );

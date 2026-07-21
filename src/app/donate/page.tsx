@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { SITE_CONFIG } from "@/constants/site";
 import { PageHero } from "@/components/common/page-hero";
 import { DonateForm } from "@/components/donate/donate-form";
+import { Reveal } from "@/components/common/reveal";
 
 export const metadata: Metadata = {
   title: "Donate",
@@ -16,7 +17,9 @@ export default function DonatePage() {
         description="Your support helps us reach more families across Kalaki District. Every contribution, of any size, makes a real difference."
       />
       <section className="container-app py-16 sm:py-20">
-        <DonateForm />
+        <Reveal>
+          <DonateForm />
+        </Reveal>
       </section>
     </>
   );

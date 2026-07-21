@@ -6,6 +6,7 @@ import { FOCUS_AREAS, PROJECTS } from "@/services/mock";
 import { ICON_MAP } from "@/lib/icons";
 import { CtaSection } from "@/components/common/cta-section";
 import { ProjectDetailBanner } from "@/components/projects/project-detail-banner";
+import { Reveal } from "@/components/common/reveal";
 
 export function generateStaticParams() {
   return PROJECTS.map((project) => ({ slug: project.slug }));
@@ -60,42 +61,44 @@ export default async function ProjectDetailPage({
           Back to Projects
         </Link>
 
-        <div className="mt-6 flex flex-wrap items-center gap-3">
-          <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
-            {focusArea?.title ?? project.category}
-          </span>
-          <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
-            <MapPin className="size-4" />
-            {project.location}
-          </span>
-        </div>
-
-        <h1 className="mt-4 text-3xl sm:text-4xl">{project.title}</h1>
-
-        <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
-          <p className="text-base leading-7 text-muted-foreground">{project.description}</p>
-
-          <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6 shadow-sm">
-            <div className="flex flex-col gap-1.5">
-              <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
-                <div className="h-full rounded-full bg-primary" style={{ width: `${project.progress}%` }} />
-              </div>
-              <div className="flex items-center justify-between text-sm text-muted-foreground">
-                <span>{project.progress}% funded</span>
-                <span>{project.goalLabel}</span>
-              </div>
-            </div>
-            <span className="w-fit rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
-              {STATUS_LABEL[project.status] ?? project.status}
+        <Reveal>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <span className="rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
+              {focusArea?.title ?? project.category}
             </span>
-            <Link
-              href="/donate"
-              className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
-            >
-              Support This Project
-            </Link>
+            <span className="flex items-center gap-1.5 text-sm text-muted-foreground">
+              <MapPin className="size-4" />
+              {project.location}
+            </span>
           </div>
-        </div>
+
+          <h1 className="mt-4 text-3xl sm:text-4xl">{project.title}</h1>
+
+          <div className="mt-8 grid gap-10 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]">
+            <p className="text-base leading-7 text-muted-foreground">{project.description}</p>
+
+            <div className="flex flex-col gap-4 rounded-xl border border-border bg-card p-6 shadow-sm">
+              <div className="flex flex-col gap-1.5">
+                <div className="h-2 w-full overflow-hidden rounded-full bg-muted">
+                  <div className="h-full rounded-full bg-primary" style={{ width: `${project.progress}%` }} />
+                </div>
+                <div className="flex items-center justify-between text-sm text-muted-foreground">
+                  <span>{project.progress}% funded</span>
+                  <span>{project.goalLabel}</span>
+                </div>
+              </div>
+              <span className="w-fit rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
+                {STATUS_LABEL[project.status] ?? project.status}
+              </span>
+              <Link
+                href="/donate"
+                className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+              >
+                Support This Project
+              </Link>
+            </div>
+          </div>
+        </Reveal>
       </section>
 
       <CtaSection />

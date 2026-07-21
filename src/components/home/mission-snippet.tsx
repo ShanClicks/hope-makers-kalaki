@@ -2,13 +2,14 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { CORE_VALUES } from "@/services/mock";
 import { ICON_MAP } from "@/lib/icons";
+import { Reveal } from "@/components/common/reveal";
 
 export function MissionSnippet() {
   const valueNames = CORE_VALUES.map((value) => value.title.toLowerCase()).join(", ");
 
   return (
     <section className="container-app py-16 sm:py-20">
-      <div className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
+      <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
         <h2 className="text-3xl sm:text-4xl">Who We Are</h2>
         <p className="text-base leading-7 text-muted-foreground sm:text-lg">
           We believe lasting change starts with the community itself. Our work is guided by{" "}
@@ -36,7 +37,7 @@ export function MissionSnippet() {
           Learn more about us
           <ArrowRight className="size-4" />
         </Link>
-      </div>
+      </Reveal>
     </section>
   );
 }

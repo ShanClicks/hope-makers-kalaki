@@ -7,6 +7,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { NAV_LINKS, SITE_CONFIG } from "@/constants/site";
 import { cn } from "@/lib/utils";
+import { ThemeToggle } from "@/components/common/theme-toggle";
 
 export function Navbar() {
   const pathname = usePathname();
@@ -50,22 +51,28 @@ export function Navbar() {
           })}
         </nav>
 
-        <Link
-          href="/donate"
-          className="ml-2 hidden items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90 lg:inline-flex"
-        >
-          Donate
-        </Link>
+        <div className="hidden items-center gap-2 lg:flex">
+          <ThemeToggle />
+          <Link
+            href="/donate"
+            className="ml-2 inline-flex items-center justify-center rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+          >
+            Donate
+          </Link>
+        </div>
 
-        <button
-          type="button"
-          className="inline-flex items-center justify-center rounded-md p-2 text-foreground lg:hidden"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-          aria-expanded={isOpen}
-          onClick={() => setIsOpen((prev) => !prev)}
-        >
-          {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
-        </button>
+        <div className="flex items-center gap-1 lg:hidden">
+          <ThemeToggle />
+          <button
+            type="button"
+            className="inline-flex items-center justify-center rounded-md p-2 text-foreground"
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((prev) => !prev)}
+          >
+            {isOpen ? <X className="size-6" /> : <Menu className="size-6" />}
+          </button>
+        </div>
       </div>
 
       {isOpen && (

@@ -29,7 +29,7 @@ export function Footer() {
               alt={SITE_CONFIG.name}
               width={200}
               height={200}
-              className="h-24 w-auto"
+              className="h-16 w-14"
               onError={() => setLogoFailed(true)}
             />
           ) : (
