@@ -1,7 +1,6 @@
 import { Hero } from "@/components/home/hero";
 import { ProgramsOverview } from "@/components/home/programs-overview";
 import { FeaturedProjects } from "@/components/home/featured-projects";
-import { IntroVideo } from "@/components/home/intro-video";
 import { ImpactStats } from "@/components/common/impact-stats";
 import { Testimonials } from "@/components/home/testimonials";
 import { FollowOurWork } from "@/components/home/follow-our-work";
@@ -14,7 +13,6 @@ export default function Home() {
       <Hero />
       <ProgramsOverview />
       <FeaturedProjects />
-      <IntroVideo />
       <CtaSection />
       <ImpactStats />
       <Testimonials />
