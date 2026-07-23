@@ -5,9 +5,9 @@ import { Reveal } from "@/components/common/reveal";
 interface PageHeroProps {
   title: ReactNode;
   description?: ReactNode;
-  /** Optional full-bleed background photo (e.g. a banner with its own baked-in
-   * logo/tagline). Uses object-contain, same as elsewhere on the site, so the photo
-   * is never cropped — the surrounding brand-navy fills any letterboxed space. */
+  /** Optional full-bleed background photo. Uses object-cover so it always fills the
+   * banner edge-to-edge with no letterboxing; the real heading/description render as
+   * HTML text on top, so cropping into any baked-in photo text is not a concern. */
   backgroundImage?: string;
   backgroundImageAlt?: string;
 }
@@ -22,7 +22,7 @@ export function PageHero({ title, description, backgroundImage, backgroundImageA
           fill
           priority
           sizes="100vw"
-          className="object-contain"
+          className="object-cover"
         />
         <div className="absolute inset-0 bg-brand-navy/60" />
         <div className="container-app relative z-10 flex flex-col items-center gap-4 text-center">
