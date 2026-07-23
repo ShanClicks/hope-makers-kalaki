@@ -74,18 +74,10 @@ export default async function ProgramDetailPage({
       />
 
       <section className="container-app py-16 sm:py-20">
-        <Link
-          href="/programs"
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-brand-royal-dark"
-        >
-          <ArrowLeft className="size-4" />
-          Back to Programs
-        </Link>
-
         {video ? (
           <>
             {videoSectionHeading ? (
-              <h2 className="mt-6 text-center text-3xl sm:text-4xl">{videoSectionHeading}</h2>
+              <h2 className="text-center text-3xl sm:text-4xl">{videoSectionHeading}</h2>
             ) : null}
 
             <Reveal className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
@@ -101,17 +93,39 @@ export default async function ProgramDetailPage({
                 />
               </div>
             </Reveal>
+
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="/programs"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-6 py-3.5 text-base font-bold text-primary transition-colors hover:bg-primary/10"
+              >
+                <ArrowLeft className="size-5" />
+                Back to Programs
+              </Link>
+            </div>
           </>
         ) : (
-          <Reveal className="mx-auto mt-6 flex max-w-3xl flex-col items-center gap-5 text-center">
-            <p className="text-left text-base leading-7 text-muted-foreground sm:text-lg">{area.description}</p>
-            {stat ? (
-              <span className="w-fit rounded-full bg-secondary px-4 py-1.5 text-sm font-semibold text-secondary-foreground">
-                {stat.value.toLocaleString()}
-                {stat.suffix} {stat.label}
-              </span>
-            ) : null}
-          </Reveal>
+          <>
+            <Reveal className="mx-auto flex max-w-3xl flex-col items-center gap-5 text-center">
+              <p className="text-left text-base leading-7 text-muted-foreground sm:text-lg">{area.description}</p>
+              {stat ? (
+                <span className="w-fit rounded-full bg-secondary px-4 py-1.5 text-sm font-semibold text-secondary-foreground">
+                  {stat.value.toLocaleString()}
+                  {stat.suffix} {stat.label}
+                </span>
+              ) : null}
+            </Reveal>
+
+            <div className="mt-10 flex justify-center">
+              <Link
+                href="/programs"
+                className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-primary px-6 py-3.5 text-base font-bold text-primary transition-colors hover:bg-primary/10"
+              >
+                <ArrowLeft className="size-5" />
+                Back to Programs
+              </Link>
+            </div>
+          </>
         )}
       </section>
 
