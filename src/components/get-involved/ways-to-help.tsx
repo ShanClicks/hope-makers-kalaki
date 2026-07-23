@@ -57,7 +57,7 @@ export function WaysToHelp() {
                 <p className="flex-1 text-sm leading-6 text-muted-foreground">{way.description}</p>
                 <Link
                   href={way.href}
-                  className="inline-flex items-center gap-1.5 text-sm font-semibold text-primary transition-colors hover:text-brand-royal-dark"
+                  className="inline-flex items-center justify-center gap-1.5 rounded-full border border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
                 >
                   {way.cta}
                   <ArrowRight className="size-4" />
