@@ -18,12 +18,14 @@ const PROGRAM_VIDEO_BY_SLUG: Record<string, { url: string; label: string }> = {
   "youth-empowerment": { url: "https://www.youtube.com/embed/4gvDhCytJGk", label: "Skilling" },
   "maternal-child-healthcare": { url: "https://www.youtube.com/embed/d2WDIzVhSqM", label: "Health Outreach" },
   "women-empowerment": { url: "https://www.youtube.com/embed/0dudl1tA4Vs", label: "Women Empowerment" },
+  education: { url: "https://www.youtube.com/embed/EydDfxaSstc", label: "Education" },
 };
 
 const PROGRAM_HEADING_BY_SLUG: Record<string, string> = {
   "youth-empowerment": "Real Skills for a Real Future",
   "maternal-child-healthcare": "Care That Reaches Every Corner of Kalaki",
   "women-empowerment": "Opportunity Built by Women, for Women",
+  education: "A Classroom Should Never Be Optional",
 };
 
 export function generateStaticParams() {
