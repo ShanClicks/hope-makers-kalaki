@@ -77,11 +77,7 @@ export default async function ProgramDetailPage({
 
         {isYouthEmpowerment ? (
           <>
-            <div className="mt-6 flex justify-center">
-              <span className="w-fit rounded-full bg-secondary px-4 py-1.5 text-sm font-semibold text-secondary-foreground">
-                Real Skills for a Real Future
-              </span>
-            </div>
+            <h2 className="mt-6 text-center text-3xl sm:text-4xl">Real Skills for a Real Future</h2>
 
             <Reveal className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
               <p className="text-left text-base leading-7 text-muted-foreground sm:text-lg">{area.description}</p>
