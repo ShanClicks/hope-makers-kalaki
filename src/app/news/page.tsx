@@ -21,6 +21,8 @@ export default function NewsPage() {
       <PageHero
         title="News & Events"
         description="Updates from the field, program milestones, and upcoming events across Kalaki District."
+        backgroundImage="/images/about/hero.jpg"
+        backgroundImageAlt="Hope Makers Kalaki — Bringing Hope. Creating Change."
       />
 
       <section className="container-app py-16 sm:py-20">

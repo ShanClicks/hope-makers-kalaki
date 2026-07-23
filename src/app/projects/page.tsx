@@ -17,6 +17,8 @@ export default function ProjectsPage() {
       <PageHero
         title="Our Projects"
         description="A closer look at the initiatives we're running across Kalaki District, from ongoing work to completed milestones."
+        backgroundImage="/images/about/hero.jpg"
+        backgroundImageAlt="Hope Makers Kalaki — Bringing Hope. Creating Change."
       />
 
       <section className="container-app py-16 sm:py-20">

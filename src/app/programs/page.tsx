@@ -15,6 +15,8 @@ export default function ProgramsPage() {
       <PageHero
         title="Our Programs"
         description="Four focus areas, one mission: building a stronger, healthier, and more equitable Kalaki District."
+        backgroundImage="/images/about/hero.jpg"
+        backgroundImageAlt="Hope Makers Kalaki — Bringing Hope. Creating Change."
       />
       <section className="container-app py-16 sm:py-20">
         <ProgramCards />
