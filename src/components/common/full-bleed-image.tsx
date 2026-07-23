@@ -6,9 +6,13 @@ interface FullBleedImageProps {
   sizes: string;
   priority?: boolean;
   onError: () => void;
+  /** Foreground image object-fit. Defaults to "contain" (never crops). Pass "cover" when
+   * the source photos are a mismatched aspect ratio and gaps/letterboxing are worse than
+   * cropping for this use case. */
+  fit?: "contain" | "cover";
 }
 
-export function FullBleedImage({ src, alt, sizes, priority, onError }: FullBleedImageProps) {
+export function FullBleedImage({ src, alt, sizes, priority, onError, fit = "contain" }: FullBleedImageProps) {
   return (
     <>
       <Image
@@ -26,7 +30,7 @@ export function FullBleedImage({ src, alt, sizes, priority, onError }: FullBleed
         fill
         priority={priority}
         sizes={sizes}
-        className="object-contain"
+        className={fit === "cover" ? "object-cover" : "object-contain"}
         onError={onError}
       />
     </>

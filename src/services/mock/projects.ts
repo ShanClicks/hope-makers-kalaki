@@ -11,7 +11,11 @@ export const PROJECTS: Project[] = [
     description:
       "The Hope Makers Kalaki Model Farm combines piggery, goat keeping, and cattle rearing to create a sustainable source of income and a hands-on training ground for community members looking to build their own livestock enterprises. Our goal is to help 100 farmers get started with 2 piglets each, and 50 goat farmers with 1 goat each, to build sustainable livestock enterprises across Kalaki.",
     location: "Kalaki District",
-    images: ["/images/projects/model-farm.jpg", "/images/projects/model-farm-2.jpg", "/images/projects/model-farm-3.jpg"],
+    images: [
+      "/images/projects/model-farm/piglets.png",
+      "/images/projects/model-farm/cattle.png",
+      "/images/projects/model-farm/farm-pen.png",
+    ],
     progress: 0,
     goalLabel: "$20,000 target",
     status: "ongoing",
