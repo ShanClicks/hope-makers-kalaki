@@ -18,7 +18,7 @@ export const FOCUS_AREAS: FocusArea[] = [
     title: "Women Empowerment",
     teaser: "Helping women build sustainable livelihoods through training, savings groups, and enterprise support.",
     description:
-      "Through vocational training, savings groups, and micro-enterprise support, we help women build sustainable livelihoods. Our vocational training equips women with practical trade and craft skills they can turn into income, while community-based savings groups build financial independence and resilience. We also offer guidance and small-scale support to women starting income-generating ventures of their own.",
+      "We believe every woman in Kalaki deserves the tools to build a life of her own choosing. Through vocational training, savings groups, and micro-enterprise support, we help women turn skill and community into lasting income. Our vocational training equips women with practical trade and craft skills they can turn into steady work, while community-based savings groups build the financial independence and resilience to weather hard seasons. Alongside this, we offer hands-on guidance and small-scale support to women starting income-generating ventures of their own, so opportunity in Kalaki isn't something women wait for, but something they build.",
     icon: "Users",
     href: "/programs/women-empowerment",
     gradient: "from-[#D62828] to-[#F4735E]",
