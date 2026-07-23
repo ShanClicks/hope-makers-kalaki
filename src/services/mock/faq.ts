@@ -82,7 +82,7 @@ export const FAQ_ITEMS: FaqItem[] = [
     category: "About Us",
     question: "Who founded Hope Makers Kalaki?",
     answer:
-      "Hope Makers Kalaki was founded in 2022 by Apitu Mary Jackline, after she made Kalaki her home and saw firsthand the need for lasting, community-driven solutions.",
+      "Hope Makers Kalaki was founded in 2022 by Mary Jackline Epitu, after she made Kalaki her home and saw firsthand the need for lasting, community-driven solutions.",
   },
   {
     id: "what-is-hmk",

@@ -42,7 +42,7 @@ export const CORE_VALUES: CoreValue[] = [
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "1",
-    name: "Apitu Mary Jackline",
+    name: "Mary Jackline Epitu",
     role: "Founder",
     photo: "/images/team/founder.jpg",
     bio: "Mary founded Hope Makers Kalaki after making Kalaki her home, driven to build lasting solutions alongside the community she became part of.",
