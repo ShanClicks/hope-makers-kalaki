@@ -46,14 +46,26 @@ export default async function ProgramDetailPage({
   const Icon = ICON_MAP[area.icon];
   const stat = IMPACT_STATS.find((s) => s.id === STAT_ID_BY_FOCUS_AREA[area.id]);
   const relatedProjects = PROJECTS.filter((p) => p.category === area.id);
+  const hasPhotoHero = area.slug === "youth-empowerment";
 
   return (
     <>
-      <PageHero title={area.title} />
-
-      <section className={`flex h-56 items-center justify-center bg-gradient-to-br sm:h-72 ${area.gradient}`}>
-        {Icon ? <Icon className="size-16 text-white/90" /> : null}
-      </section>
+      {hasPhotoHero ? (
+        <PageHero
+          title={area.title}
+          description="Equipping young people with financial literacy, skilling, and modern farming practices to build their own future."
+          backgroundImage="/images/about/hero.jpg"
+          backgroundImageAlt="Hope Makers Kalaki — Bringing Hope. Creating Change."
+          backgroundFit="contain"
+        />
+      ) : (
+        <>
+          <PageHero title={area.title} />
+          <section className={`flex h-56 items-center justify-center bg-gradient-to-br sm:h-72 ${area.gradient}`}>
+            {Icon ? <Icon className="size-16 text-white/90" /> : null}
+          </section>
+        </>
+      )}
 
       <section className="container-app py-16 sm:py-20">
         <Link
