@@ -3,7 +3,6 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { FOCUS_AREAS, IMPACT_STATS, PROJECTS } from "@/services/mock";
-import { ICON_MAP } from "@/lib/icons";
 import { PageHero } from "@/components/common/page-hero";
 import { CtaSection } from "@/components/common/cta-section";
 import { ProjectCard } from "@/components/projects/project-card";
@@ -43,28 +42,22 @@ export default async function ProgramDetailPage({
     notFound();
   }
 
-  const Icon = ICON_MAP[area.icon];
   const stat = IMPACT_STATS.find((s) => s.id === STAT_ID_BY_FOCUS_AREA[area.id]);
   const relatedProjects = PROJECTS.filter((p) => p.category === area.id);
   const isYouthEmpowerment = area.slug === "youth-empowerment";
 
   return (
     <>
-      {isYouthEmpowerment ? (
-        <PageHero
-          title={area.title}
-          description="Equipping young people with financial literacy, skilling, and modern farming practices to build their own future."
-          backgroundImage="/images/about/hero.jpg"
-          backgroundImageAlt="Hope Makers Kalaki — Bringing Hope. Creating Change."
-        />
-      ) : (
-        <>
-          <PageHero title={area.title} />
-          <section className={`flex h-56 items-center justify-center bg-gradient-to-br sm:h-72 ${area.gradient}`}>
-            {Icon ? <Icon className="size-16 text-white/90" /> : null}
-          </section>
-        </>
-      )}
+      <PageHero
+        title={area.title}
+        description={
+          isYouthEmpowerment
+            ? "Equipping young people with financial literacy, skilling, and modern farming practices to build their own future."
+            : area.teaser
+        }
+        backgroundImage="/images/about/hero.jpg"
+        backgroundImageAlt="Hope Makers Kalaki — Bringing Hope. Creating Change."
+      />
 
       <section className="container-app py-16 sm:py-20">
         <Link
