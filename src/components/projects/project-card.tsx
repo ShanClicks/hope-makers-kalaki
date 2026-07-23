@@ -103,16 +103,11 @@ export function ProjectCard({ project }: { project: Project }) {
         Icon={Icon}
       />
       <div className="flex flex-1 flex-col gap-3 p-6">
-        <div className="flex items-center justify-between gap-2">
-          <span className="w-fit rounded-full bg-secondary px-3 py-1 text-xs font-semibold uppercase tracking-wide text-secondary-foreground">
-            {focusArea?.title ?? project.category}
+        {project.status === "completed" ? (
+          <span className="w-fit rounded-full bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
+            Completed
           </span>
-          {project.status === "completed" ? (
-            <span className="w-fit rounded-full bg-muted px-3 py-1 text-xs font-semibold uppercase tracking-wide text-muted-foreground">
-              Completed
-            </span>
-          ) : null}
-        </div>
+        ) : null}
         <h3 className="text-lg">{project.title}</h3>
         <p className="flex-1 text-sm leading-6 text-muted-foreground">{project.summary}</p>
         <span className="flex items-center gap-1.5 text-xs text-muted-foreground">
