@@ -56,7 +56,6 @@ export default async function ProgramDetailPage({
           description="Equipping young people with financial literacy, skilling, and modern farming practices to build their own future."
           backgroundImage="/images/about/hero.jpg"
           backgroundImageAlt="Hope Makers Kalaki — Bringing Hope. Creating Change."
-          backgroundFit="contain"
         />
       ) : (
         <>
@@ -77,7 +76,7 @@ export default async function ProgramDetailPage({
         </Link>
 
         <Reveal className="mx-auto mt-6 flex max-w-3xl flex-col items-center gap-5 text-center">
-          <p className="text-base leading-7 text-muted-foreground sm:text-lg">{area.description}</p>
+          <p className="text-left text-base leading-7 text-muted-foreground sm:text-lg">{area.description}</p>
           {stat ? (
             <span className="w-fit rounded-full bg-secondary px-4 py-1.5 text-sm font-semibold text-secondary-foreground">
               {stat.value.toLocaleString()}
