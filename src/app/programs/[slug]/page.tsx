@@ -15,6 +15,11 @@ const STAT_ID_BY_FOCUS_AREA: Record<string, string> = {
   health: "mothers",
 };
 
+const PROGRAM_VIDEO_BY_SLUG: Record<string, { url: string; label: string }> = {
+  "youth-empowerment": { url: "https://www.youtube.com/embed/4gvDhCytJGk", label: "Skilling" },
+  "maternal-child-healthcare": { url: "https://www.youtube.com/embed/d2WDIzVhSqM", label: "Health Outreach" },
+};
+
 export function generateStaticParams() {
   return FOCUS_AREAS.map((area) => ({ slug: area.slug }));
 }
@@ -45,6 +50,7 @@ export default async function ProgramDetailPage({
   const stat = IMPACT_STATS.find((s) => s.id === STAT_ID_BY_FOCUS_AREA[area.id]);
   const relatedProjects = PROJECTS.filter((p) => p.category === area.id);
   const isYouthEmpowerment = area.slug === "youth-empowerment";
+  const video = PROGRAM_VIDEO_BY_SLUG[area.slug];
 
   return (
     <>
@@ -68,16 +74,25 @@ export default async function ProgramDetailPage({
           Back to Programs
         </Link>
 
-        {isYouthEmpowerment ? (
+        {video ? (
           <>
-            <h2 className="mt-6 text-center text-3xl sm:text-4xl">Real Skills for a Real Future</h2>
+            {isYouthEmpowerment ? (
+              <h2 className="mt-6 text-center text-3xl sm:text-4xl">Real Skills for a Real Future</h2>
+            ) : stat ? (
+              <div className="mt-6 flex justify-center">
+                <span className="w-fit rounded-full bg-secondary px-4 py-1.5 text-sm font-semibold text-secondary-foreground">
+                  {stat.value.toLocaleString()}
+                  {stat.suffix} {stat.label}
+                </span>
+              </div>
+            ) : null}
 
             <Reveal className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
               <p className="text-left text-base leading-7 text-muted-foreground sm:text-lg">{area.description}</p>
               <div className="relative aspect-video overflow-hidden rounded-2xl border border-border shadow-sm">
                 <iframe
-                  src="https://www.youtube.com/embed/4gvDhCytJGk"
-                  title={`${area.title} Skilling — Hope Makers Kalaki`}
+                  src={video.url}
+                  title={`${area.title} ${video.label} — Hope Makers Kalaki`}
                   className="absolute inset-0 size-full"
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                   allowFullScreen

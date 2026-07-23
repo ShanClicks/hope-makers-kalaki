@@ -40,7 +40,7 @@ export const FOCUS_AREAS: FocusArea[] = [
     title: "Maternal & Child Healthcare",
     teaser: "Connecting mothers and children to prenatal care, nutrition, and lifesaving health services.",
     description:
-      "Our health outreach programs connect mothers and children to prenatal care, nutrition support, and lifesaving services. We help expecting mothers access prenatal care they would otherwise have to travel far to reach, address child and maternal malnutrition in the community, and bring lifesaving health services directly into Kalaki's remote areas through outreach and mobile support.",
+      "Our health outreach programs bring essential care to Kalaki's most underserved communities, connecting mothers, children, and families to prenatal care, nutrition support, and lifesaving health services. We help expecting mothers access prenatal care they would otherwise have to travel far to reach, address child and maternal malnutrition, and tackle everyday health challenges that limited access leaves unmet. Through outreach and mobile support, we bring lifesaving health services directly into Kalaki's remote areas, reaching families who would otherwise go without.",
     icon: "HeartPulse",
     href: "/programs/maternal-child-healthcare",
     gradient: "from-[#0057B8] to-[#D62828]",
