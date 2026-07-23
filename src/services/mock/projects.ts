@@ -30,7 +30,11 @@ export const PROJECTS: Project[] = [
     description:
       "Our Savings and Credit Cooperative Organization (SACCO) gives community members a safe place to save together and borrow affordably, strengthening financial independence and supporting small business growth across Kalaki. Youth can borrow at 5% interest for a 6-month term (one farming season), with Hope Makers Kalaki supervising and training each chosen venture to promote financial literacy and accountability.",
     location: "Kalaki District",
-    images: [],
+    images: [
+      "/images/projects/sacco/sacco.png",
+      "/images/projects/sacco/sample.png",
+      "/images/projects/sacco/shade.png",
+    ],
     progress: 0,
     goalLabel: "$10,000 target",
     status: "ongoing",
@@ -64,69 +68,32 @@ export const PROJECTS: Project[] = [
     description:
       "Our child and maternal care program supports mothers and children across Kalaki with community-based health support, helping families access the care they need to keep mothers and children healthy.",
     location: "Kalaki District",
-    images: [],
+    images: [
+      "/images/projects/maternal-care/immunity.png",
+      "/images/projects/maternal-care/kit.jpg",
+      "/images/projects/maternal-care/sensitization.jpg",
+    ],
     progress: 0,
     goalLabel: "Funding goal: TBD",
     status: "ongoing",
   },
   {
     id: "5",
-    slug: "kalaki-primary-classroom-block",
-    title: "Kalaki Primary Classroom Block",
+    slug: "quality-education",
+    title: "Access to Quality Education",
     category: "education",
     summary:
-      "Constructing a 4-classroom block to ease overcrowding and give 320 children a safe place to learn.",
+      "Supporting learners across Kalaki with resources, health education, mentorship, scholarships, and safe classroom space to stay in school.",
     description:
-      "Kalaki Primary School has over 900 pupils sharing classrooms built for half that number. This project is constructing a permanent four-classroom block complete with furniture, lighting, and accessible entrances, directly benefiting 320 children.",
+      "Supporting learners across Kalaki with resources, health education, stay-in-school campaigns, mentorship, and scholarships — including building safe, adequate classroom space so every child has room to learn.",
     location: "Kalaki Town Council",
-    images: [],
-    progress: 72,
+    images: [
+      "/images/projects/educ/mass.png",
+      "/images/projects/educ/class.png",
+      "/images/projects/educ/tree.png",
+    ],
+    progress: 13,
     goalLabel: "UGX 180M goal",
     status: "ongoing",
-  },
-  {
-    id: "6",
-    slug: "women-tailoring-cooperative",
-    title: "Women's Tailoring Cooperative",
-    category: "women",
-    summary:
-      "Equipping 60 women with tailoring machines and business training to launch a shared cooperative workshop.",
-    description:
-      "This project establishes a shared tailoring workshop for a cooperative of 60 women, providing machines, fabric starter kits, and twelve weeks of business and financial literacy training.",
-    location: "Ochero Sub-county",
-    images: ["/images/projects/women-tailoring.jpg"],
-    progress: 55,
-    goalLabel: "UGX 95M goal",
-    status: "ongoing",
-  },
-  {
-    id: "7",
-    slug: "youth-vocational-training-center",
-    title: "Youth Vocational Training Center",
-    category: "youth",
-    summary:
-      "A training hub offering carpentry, welding, and digital skills courses for 200 out-of-school youth annually.",
-    description:
-      "The center offers six-month certificate courses in carpentry, welding, tailoring, and basic digital literacy, pairing every graduate with a mentor and startup toolkit.",
-    location: "Kalaki District Headquarters",
-    images: ["/images/projects/youth-vocational.jpg"],
-    progress: 40,
-    goalLabel: "UGX 240M goal",
-    status: "ongoing",
-  },
-  {
-    id: "8",
-    slug: "girls-scholarship-fund",
-    title: "Girls' Scholarship Fund",
-    category: "education",
-    summary:
-      "Full secondary school scholarships and mentorship for 150 girls at risk of dropping out.",
-    description:
-      "The Girls' Scholarship Fund covers tuition, scholastic materials, and sanitary supplies for 150 girls, paired with mentorship circles to support their transition through secondary school.",
-    location: "Kalaki District",
-    images: [],
-    progress: 100,
-    goalLabel: "UGX 210M goal",
-    status: "completed",
   },
 ];
