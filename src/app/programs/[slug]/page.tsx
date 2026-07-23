@@ -2,10 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
-import { FOCUS_AREAS, IMPACT_STATS, PROJECTS } from "@/services/mock";
+import { FOCUS_AREAS, IMPACT_STATS } from "@/services/mock";
 import { PageHero } from "@/components/common/page-hero";
 import { CtaSection } from "@/components/common/cta-section";
-import { ProjectCard } from "@/components/projects/project-card";
 import { Reveal } from "@/components/common/reveal";
 
 const STAT_ID_BY_FOCUS_AREA: Record<string, string> = {
@@ -53,7 +52,6 @@ export default async function ProgramDetailPage({
   }
 
   const stat = IMPACT_STATS.find((s) => s.id === STAT_ID_BY_FOCUS_AREA[area.id]);
-  const relatedProjects = PROJECTS.filter((p) => p.category === area.id);
   const isYouthEmpowerment = area.slug === "youth-empowerment";
   const video = PROGRAM_VIDEO_BY_SLUG[area.slug];
   const videoSectionHeading = PROGRAM_HEADING_BY_SLUG[area.slug];
@@ -112,27 +110,6 @@ export default async function ProgramDetailPage({
           </Reveal>
         )}
       </section>
-
-      {relatedProjects.length > 0 ? (
-        <section className="bg-muted/40 py-16 sm:py-20">
-          <div className="container-app">
-            <Reveal className="mx-auto max-w-2xl text-center">
-              <h2 className="text-3xl sm:text-4xl">Related Projects</h2>
-              <p className="mt-3 text-base leading-7 text-muted-foreground">
-                Initiatives putting this program into action across Kalaki District.
-              </p>
-            </Reveal>
-
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              {relatedProjects.map((project, index) => (
-                <Reveal key={project.id} delay={index * 0.08}>
-                  <ProjectCard project={project} />
-                </Reveal>
-              ))}
-            </div>
-          </div>
-        </section>
-      ) : null}
 
       <CtaSection />
     </>
