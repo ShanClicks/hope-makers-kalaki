@@ -46,10 +46,9 @@ export const PROJECTS: Project[] = [
       "Through this initiative, we make and distribute reusable sanitary pads to girls and women across Kalaki, helping remove a major barrier to school attendance and daily life while promoting menstrual health education. Our goal is to provide 4,500 reusable pads to 1,500 teenage school-going girls across Kakure Subcounty schools.",
     location: "Kalaki District",
     images: [
-      "/images/projects/menstrual-hygiene.jpg",
-      "/images/projects/menstrual-hygiene-2.jpg",
-      "/images/projects/menstrual-hygiene-3.jpg",
-      "/images/projects/menstrual-hygiene-4.jpg",
+      "/images/projects/menstrual-hygiene/craft.png",
+      "/images/projects/menstrual-hygiene/menstraul.png",
+      "/images/projects/menstrual-hygiene/menstrual-hygiene.png",
     ],
     progress: 0,
     goalLabel: "$3,500 target",
