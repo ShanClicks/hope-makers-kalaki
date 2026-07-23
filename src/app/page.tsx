@@ -2,7 +2,6 @@ import { Hero } from "@/components/home/hero";
 import { ProgramsOverview } from "@/components/home/programs-overview";
 import { FeaturedProjects } from "@/components/home/featured-projects";
 import { ImpactStats } from "@/components/common/impact-stats";
-import { Testimonials } from "@/components/home/testimonials";
 import { VoicesFromKalaki } from "@/components/home/voices-from-kalaki";
 import { FollowOurWork } from "@/components/home/follow-our-work";
 import { DonationImpact } from "@/components/home/donation-impact";
@@ -16,7 +15,6 @@ export default function Home() {
       <FeaturedProjects />
       <CtaSection />
       <ImpactStats />
-      <Testimonials />
       <VoicesFromKalaki />
       <FollowOurWork />
       <DonationImpact />
