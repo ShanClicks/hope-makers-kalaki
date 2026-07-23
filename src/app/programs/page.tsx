@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { SITE_CONFIG } from "@/constants/site";
 import { PageHero } from "@/components/common/page-hero";
 import { CtaSection } from "@/components/common/cta-section";
-import { ProgramSection } from "@/components/programs/program-section";
-import { FOCUS_AREAS } from "@/services/mock";
+import { ProgramCards } from "@/components/programs/program-cards";
 
 export const metadata: Metadata = {
   title: "Our Programs",
@@ -17,9 +16,9 @@ export default function ProgramsPage() {
         title="Our Programs"
         description="Four focus areas, one mission: building a stronger, healthier, and more equitable Kalaki District."
       />
-      {FOCUS_AREAS.map((area, index) => (
-        <ProgramSection key={area.id} area={area} index={index} />
-      ))}
+      <section className="container-app py-16 sm:py-20">
+        <ProgramCards />
+      </section>
       <CtaSection />
     </>
   );

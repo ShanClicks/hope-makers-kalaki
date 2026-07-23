@@ -42,10 +42,10 @@ export const CORE_VALUES: CoreValue[] = [
 export const TEAM_MEMBERS: TeamMember[] = [
   {
     id: "1",
-    name: "Nakato Esther",
-    role: "Executive Director",
-    photo: "/images/team/nakato.jpg",
-    bio: "Esther has led community development initiatives across Teso sub-region for over 15 years.",
+    name: "Apitu Mary Jackline",
+    role: "Founder",
+    photo: "/images/team/founder.jpg",
+    bio: "Mary founded Hope Makers Kalaki after making Kalaki her home, driven to build lasting solutions alongside the community she became part of.",
   },
   {
     id: "2",
@@ -56,10 +56,10 @@ export const TEAM_MEMBERS: TeamMember[] = [
   },
   {
     id: "3",
-    name: "Aciro Miriam",
-    role: "Health Programs Lead",
-    photo: "/images/team/aciro.jpg",
-    bio: "A registered midwife, Miriam leads our maternal and child healthcare outreach initiatives.",
+    name: "Alieto Naomi",
+    role: "Health Team Lead",
+    photo: "/images/team/health-lead.jpg",
+    bio: "Naomi leads our maternal and child healthcare outreach initiatives across Kalaki District.",
   },
   {
     id: "4",

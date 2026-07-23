@@ -42,6 +42,20 @@ export function OurStory() {
             &ldquo;We believe every young girl and boy in Kalaki deserves a future they choose for
             themselves, not one decided for them.&rdquo;
           </blockquote>
+
+          <div className="mt-12">
+            <h3 className="text-center text-2xl sm:text-3xl">Hear From Our Founder</h3>
+            <div className="relative mt-6 aspect-video overflow-hidden rounded-2xl border border-border shadow-sm">
+              <iframe
+                src="https://www.youtube.com/embed/yh5qiG2N82A"
+                title={`Hear From Our Founder — ${SITE_CONFIG.name}`}
+                className="absolute inset-0 size-full"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                loading="lazy"
+              />
+            </div>
+          </div>
         </Reveal>
       </div>
     </section>

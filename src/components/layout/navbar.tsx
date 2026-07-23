@@ -14,6 +14,8 @@ export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [logoFailed, setLogoFailed] = useState(false);
 
+  if (pathname?.startsWith("/admin")) return null;
+
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-background/95 backdrop-blur supports-backdrop-filter:bg-background/80">
       <div className="container-app flex h-20 items-center justify-between">

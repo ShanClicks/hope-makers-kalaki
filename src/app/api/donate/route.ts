@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { donateFormSchema } from "@/lib/validations";
 import { SITE_CONFIG } from "@/constants/site";
+import { db } from "@/lib/db";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
@@ -17,6 +18,23 @@ export async function POST(request: Request) {
       { error: "Validation failed.", issues: result.error.issues },
       { status: 400 }
     );
+  }
+
+  try {
+    await db.donation.create({
+      data: {
+        reference: crypto.randomUUID(),
+        method: "bank-transfer",
+        status: "pending",
+        name: result.data.name,
+        email: result.data.email,
+        phone: result.data.phone || null,
+        amount: Math.round(result.data.amount),
+        message: result.data.message || null,
+      },
+    });
+  } catch (error) {
+    console.error("Failed to persist donation pledge:", error);
   }
 
   if (!process.env.RESEND_API_KEY) {

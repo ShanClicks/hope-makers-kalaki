@@ -1,26 +1,24 @@
 import type { Metadata } from "next";
 import { SITE_CONFIG } from "@/constants/site";
-import { PageHero } from "@/components/common/page-hero";
-import { DonateForm } from "@/components/donate/donate-form";
-import { Reveal } from "@/components/common/reveal";
+import { DonateHero } from "@/components/donate/donate-hero";
+import { DonationProjects } from "@/components/donate/donation-projects";
+import { PaymentMethods } from "@/components/donate/payment-methods";
+import { DonateCta } from "@/components/donate/donate-cta";
+import { DonateFaq } from "@/components/donate/donate-faq";
 
 export const metadata: Metadata = {
   title: "Donate",
-  description: `Support ${SITE_CONFIG.name}'s work in education, women's empowerment, youth, and healthcare across Kalaki District.`,
+  description: `Support ${SITE_CONFIG.name}'s work in education, women's empowerment, youth, and healthcare across Kalaki District with instant MTN or Airtel Mobile Money.`,
 };
 
 export default function DonatePage() {
   return (
     <>
-      <PageHero
-        title="Donate"
-        description="Your support helps us reach more families across Kalaki District. Every contribution, of any size, makes a real difference."
-      />
-      <section className="container-app py-16 sm:py-20">
-        <Reveal>
-          <DonateForm />
-        </Reveal>
-      </section>
+      <DonateHero />
+      <DonationProjects />
+      <PaymentMethods />
+      <DonateCta />
+      <DonateFaq />
     </>
   );
 }

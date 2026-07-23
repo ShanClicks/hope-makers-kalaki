@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactFormSchema } from "@/lib/validations";
 import { SITE_CONFIG } from "@/constants/site";
+import { db } from "@/lib/db";
 
 export async function POST(request: Request) {
   const body = await request.json().catch(() => null);
@@ -17,6 +18,13 @@ export async function POST(request: Request) {
       { error: "Validation failed.", issues: result.error.issues },
       { status: 400 }
     );
+  }
+
+  try {
+    await db.contactSubmission.create({ data: result.data });
+  } catch (error) {
+    // Never let a DB hiccup block the email notification — the submission record is a bonus.
+    console.error("Failed to persist contact submission:", error);
   }
 
   if (!process.env.RESEND_API_KEY) {

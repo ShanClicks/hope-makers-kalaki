@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { FOOTER_LINKS, SITE_CONFIG } from "@/constants/site";
@@ -18,6 +19,9 @@ const SOCIAL_LINKS = [
 export function Footer() {
   const year = new Date().getFullYear();
   const [logoFailed, setLogoFailed] = useState(false);
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin")) return null;
 
   return (
     <footer className="border-t-4 border-accent bg-muted/40">

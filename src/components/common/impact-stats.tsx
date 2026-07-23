@@ -18,8 +18,8 @@ export function ImpactStats() {
           {IMPACT_STATS.map((stat, index) => {
             const Icon = ICON_MAP[stat.icon];
             return (
-              <Reveal key={stat.id} delay={index * 0.06}>
-                <div className="flex flex-col items-center gap-3 rounded-xl border border-border bg-card p-6 text-center shadow-sm">
+              <Reveal key={stat.id} delay={index * 0.06} className="h-full">
+                <div className="flex h-full flex-col items-center gap-3 rounded-xl border border-border bg-card p-6 text-center shadow-sm">
                   <span className="flex size-12 items-center justify-center rounded-full bg-secondary text-primary">
                     {Icon ? <Icon className="size-6" /> : null}
                   </span>

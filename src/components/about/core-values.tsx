@@ -7,7 +7,7 @@ export function CoreValues() {
     <section className="bg-muted/40 py-16 sm:py-20">
       <div className="container-app">
         <Reveal className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl sm:text-4xl">Our Core Values</h2>
+          <h2 className="text-3xl sm:text-4xl">Our Approach</h2>
           <p className="mt-3 text-base leading-7 text-muted-foreground">
             These principles guide every program and partnership we build.
           </p>

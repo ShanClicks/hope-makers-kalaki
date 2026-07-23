@@ -37,6 +37,10 @@ yarn-error.log*
 # vercel
 .vercel
 
+# local sqlite database (contains real donor/contact PII once used — never commit)
+/prisma/*.db
+/prisma/*.db-journal
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts

@@ -109,7 +109,7 @@
   --radius-xl: calc(var(--radius) + 0.5rem);
 
   --font-heading: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
-  --font-body: var(--font-open-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-poppins), ui-sans-serif, system-ui, sans-serif;
 
   --animate-marquee: marquee 40s linear infinite;
 }

@@ -2,7 +2,9 @@ export type FocusAreaId = "education" | "women" | "youth" | "health";
 
 export interface FocusArea {
   id: FocusAreaId;
+  slug: string;
   title: string;
+  teaser: string;
   description: string;
   icon: string;
   href: string;
@@ -25,7 +27,7 @@ export interface Project {
   summary: string;
   description: string;
   location: string;
-  coverImage: string;
+  images: string[];
   progress: number;
   goalLabel: string;
   status: "ongoing" | "completed" | "planned";
@@ -101,4 +103,17 @@ export interface ContactFormValues {
 
 export interface NewsletterFormValues {
   email: string;
+}
+
+export type FaqCategory =
+  | "Donations & Giving"
+  | "Programs & Impact"
+  | "Volunteering & Partnerships"
+  | "About Us";
+
+export interface FaqItem {
+  id: string;
+  category: FaqCategory;
+  question: string;
+  answer: string;
 }

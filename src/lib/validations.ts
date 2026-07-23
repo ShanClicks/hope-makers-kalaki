@@ -25,3 +25,16 @@ export const donateFormSchema = z.object({
 });
 
 export type DonateFormSchema = z.infer<typeof donateFormSchema>;
+
+export const mobileMoneyDonationSchema = z.object({
+  name: z.string().trim().min(2, "Please enter your full name.").max(100),
+  email: z.string().trim().email("Please enter a valid email address."),
+  phone: z.string().trim().min(9, "Please enter the mobile money number to charge.").max(20),
+  amount: z.coerce
+    .number()
+    .min(500, "Minimum donation is UGX 500.")
+    .max(10_000_000, "Maximum donation is UGX 10,000,000."),
+  message: z.string().trim().max(2000).optional().or(z.literal("")),
+});
+
+export type MobileMoneyDonationSchema = z.infer<typeof mobileMoneyDonationSchema>;

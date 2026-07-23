@@ -15,6 +15,7 @@ export function ProjectDetailBanner({
   icon: ReactNode;
 }) {
   const [imageFailed, setImageFailed] = useState(false);
+  const firstImage = project.images[0];
 
   return (
     <motion.section
@@ -23,9 +24,9 @@ export function ProjectDetailBanner({
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
     >
-      {!imageFailed ? (
+      {firstImage && !imageFailed ? (
         <FullBleedImage
-          src={project.coverImage}
+          src={firstImage}
           alt={project.title}
           sizes="100vw"
           priority

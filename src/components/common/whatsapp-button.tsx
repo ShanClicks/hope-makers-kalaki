@@ -1,8 +1,15 @@
+"use client";
+
+import { usePathname } from "next/navigation";
 import { FaWhatsapp } from "react-icons/fa6";
 import { SITE_CONFIG } from "@/constants/site";
 import { getWhatsAppLink } from "@/lib/utils";
 
 export function WhatsAppButton() {
+  const pathname = usePathname();
+
+  if (pathname?.startsWith("/admin")) return null;
+
   return (
     <a
       href={getWhatsAppLink(SITE_CONFIG.whatsapp, `Hello ${SITE_CONFIG.shortName}, I'd like to get in touch.`)}

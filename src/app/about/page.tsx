@@ -18,6 +18,8 @@ export default function AboutPage() {
       <PageHero
         title="About Us"
         description="Learn more about our mission, the values that guide our work, and the team dedicated to improving lives across Kalaki District."
+        backgroundImage="/images/about/hero.jpg"
+        backgroundImageAlt="Hope Makers Kalaki — Bringing Hope. Creating Change."
       />
       <OurStory />
       <MissionVision />

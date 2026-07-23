@@ -1,0 +1,165 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ---------- Site content (mirrors src/services/mock/*, now editable via /admin) ----------
+
+model FocusArea {
+  id          String    @id // "education" | "women" | "youth" | "health"
+  slug        String    @unique
+  title       String
+  teaser      String
+  description String
+  icon        String
+  gradient    String
+  order       Int       @default(0)
+  projects    Project[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Project {
+  id          String    @id @default(cuid())
+  slug        String    @unique
+  title       String
+  categoryId  String
+  category    FocusArea @relation(fields: [categoryId], references: [id])
+  summary     String
+  description String
+  location    String
+  coverImage  String
+  progress    Int       @default(0)
+  goalLabel   String
+  status      String    @default("ongoing") // ongoing | completed | planned
+  order       Int       @default(0)
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model TeamMember {
+  id        String   @id @default(cuid())
+  name      String
+  role      String
+  photo     String
+  bio       String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model CoreValue {
+  id          String   @id @default(cuid())
+  title       String
+  description String
+  icon        String
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Testimonial {
+  id        String   @id @default(cuid())
+  name      String
+  program   String // FocusArea id
+  portrait  String
+  excerpt   String
+  story     String
+  location  String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model GalleryImage {
+  id        String   @id @default(cuid())
+  src       String
+  alt       String
+  category  String // education | women | youth | healthcare | events
+  span      String? // tall | wide | normal
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model NewsItem {
+  id        String    @id @default(cuid())
+  slug      String    @unique
+  title     String
+  summary   String
+  content   String
+  image     String
+  date      DateTime
+  category  String
+  type      String // news | event
+  eventDate DateTime?
+  location  String?
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model ImpactStat {
+  id        String   @id // "children" | "women" | "youth" | "mothers" | ...
+  label     String
+  value     Int
+  suffix    String?
+  icon      String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model FaqItem {
+  id        String   @id @default(cuid())
+  category  String
+  question  String
+  answer    String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model AnnualGrowthDatum {
+  id            String @id @default(cuid())
+  year          String @unique
+  beneficiaries Int
+  projects      Int
+}
+
+model ProgramDistributionDatum {
+  id    String @id @default(cuid())
+  label String @unique
+  value Int
+}
+
+// ---------- Transactional data (new — nothing was persisted anywhere before this) ----------
+
+model Donation {
+  id           String   @id @default(cuid())
+  marzpayUuid  String?  @unique
+  reference    String   @unique
+  method       String // mobile-money | bank-transfer
+  status       String // processing | completed | failed | pending
+  name         String
+  email        String
+  phone        String?
+  amount       Int
+  currency     String   @default("UGX")
+  message      String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  phone     String?
+  subject   String
+  message   String
+  createdAt DateTime @default(now())
+}

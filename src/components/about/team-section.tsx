@@ -23,18 +23,18 @@ export function TeamSection() {
           <Reveal key={member.id} delay={index * 0.08}>
             <div className="flex h-full flex-col items-center gap-3 rounded-xl border border-border bg-card p-6 text-center shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
               {!failedImages[member.id] ? (
-                <div className="relative size-20 overflow-hidden rounded-full">
+                <div className="relative size-32 overflow-hidden rounded-full">
                   <Image
                     src={member.photo}
                     alt={member.name}
                     fill
-                    sizes="80px"
-                    className="object-cover"
+                    sizes="128px"
+                    className="object-cover object-top"
                     onError={() => setFailedImages((prev) => ({ ...prev, [member.id]: true }))}
                   />
                 </div>
               ) : (
-                <span className="flex size-20 items-center justify-center rounded-full bg-primary text-xl font-semibold text-primary-foreground">
+                <span className="flex size-32 items-center justify-center rounded-full bg-primary text-2xl font-semibold text-primary-foreground">
                   {getInitials(member.name)}
                 </span>
               )}

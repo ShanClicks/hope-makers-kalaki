@@ -1,14 +1,15 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { BookOpen, ChevronLeft, ChevronRight, Heart } from "lucide-react";
 
 interface Slide {
   id: string;
   headline: string;
   subhead: string;
-  learnMoreHref: string;
+  image?: string;
 }
 
 const SLIDES: Slide[] = [
@@ -17,32 +18,32 @@ const SLIDES: Slide[] = [
     headline: "Growing Kalaki's Future, One Farm at a Time",
     subhead:
       "Teaching sustainable livestock and agriculture skills that put food and income back into Kalaki families' hands.",
-    learnMoreHref: "/projects/kalaki-model-farm",
+    image: "/images/home/model-farm.png",
   },
   {
     id: "sacco",
     headline: "Saving Together, Building Together",
     subhead:
       "Bringing Kalaki together to save, borrow, and build financial independence, one community meeting at a time.",
-    learnMoreHref: "/projects/kalaki-sacco",
+    image: "/images/home/sacco.png",
   },
   {
     id: "menstrual-hygiene",
     headline: "Dignity Shouldn't Cost a School Day",
     subhead:
       "Keeping girls in school and informed, so a natural part of growing up never has to mean falling behind.",
-    learnMoreHref: "/projects/menstrual-hygiene-reusable-pads",
+    image: "/images/home/menstrual-hygiene.png",
   },
   {
     id: "child-maternal-care",
     headline: "Every Mother, Every Child, Cared For",
     subhead:
       "Supporting mothers and children with the essentials they need for a healthy start, delivered directly into the community.",
-    learnMoreHref: "/projects/child-maternal-care",
+    image: "/images/home/maternal-care.jpg",
   },
 ];
 
-const AUTO_ADVANCE_MS = 6000;
+const AUTO_ADVANCE_MS = 5000;
 
 export function Hero() {
   const [index, setIndex] = useState(0);
@@ -68,7 +69,7 @@ export function Hero() {
       onFocus={() => setIsPaused(true)}
       onBlur={() => setIsPaused(false)}
     >
-      <div className="relative h-[420px] sm:h-[460px] lg:h-[500px]">
+      <div className="relative h-120 sm:h-140 lg:h-160">
         {SLIDES.map((slide, i) => {
           const isActive = i === index;
           return (
@@ -79,6 +80,19 @@ export function Hero() {
               }`}
               aria-hidden={!isActive}
             >
+              {slide.image ? (
+                <>
+                  <Image
+                    src={slide.image}
+                    alt=""
+                    fill
+                    sizes="100vw"
+                    priority={i === 0}
+                    className="object-cover object-center"
+                  />
+                  <div className="absolute inset-0 bg-brand-navy/50" />
+                </>
+              ) : null}
               <div className="container-app relative z-10 flex h-full flex-col items-center justify-center gap-6 text-center">
                 <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-tight sm:text-5xl lg:text-6xl">
                   {slide.headline}
@@ -90,16 +104,18 @@ export function Hero() {
                   <Link
                     href="/donate"
                     tabIndex={isActive ? 0 : -1}
-                    className="inline-flex items-center justify-center rounded-full bg-accent px-6 py-3 text-sm font-semibold text-accent-foreground transition-colors hover:bg-accent/90"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl bg-accent px-6 py-3.5 text-base font-bold text-accent-foreground transition-colors hover:bg-accent/90"
                   >
+                    <Heart className="size-5 fill-current" />
                     Donate Now
                   </Link>
                   <Link
-                    href={slide.learnMoreHref}
+                    href="/about"
                     tabIndex={isActive ? 0 : -1}
-                    className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-white/10"
+                    className="inline-flex items-center justify-center gap-2 rounded-xl border-2 border-white/70 px-6 py-3.5 text-base font-bold text-white transition-colors hover:bg-white/10"
                   >
-                    Learn More
+                    <BookOpen className="size-5" />
+                    Our Story
                   </Link>
                 </div>
               </div>

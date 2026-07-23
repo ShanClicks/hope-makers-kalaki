@@ -1,9 +1,13 @@
 import {
   BookOpen,
+  GraduationCap,
+  Hammer,
+  HandCoins,
   Handshake,
   HeartHandshake,
   HeartPulse,
   Lightbulb,
+  Map,
   MapPin,
   Rocket,
   ShieldCheck,
@@ -27,4 +31,8 @@ export const ICON_MAP: Record<string, LucideIcon> = {
   Sunrise,
   Handshake,
   Lightbulb,
+  GraduationCap,
+  HandCoins,
+  Map,
+  Hammer,
 };

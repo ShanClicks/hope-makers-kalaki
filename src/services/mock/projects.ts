@@ -11,7 +11,7 @@ export const PROJECTS: Project[] = [
     description:
       "The Hope Makers Kalaki Model Farm combines piggery, goat keeping, and cattle rearing to create a sustainable source of income and a hands-on training ground for community members looking to build their own livestock enterprises. Our goal is to help 100 farmers get started with 2 piglets each, and 50 goat farmers with 1 goat each, to build sustainable livestock enterprises across Kalaki.",
     location: "Kalaki District",
-    coverImage: "/images/projects/model-farm.jpg",
+    images: ["/images/projects/model-farm.jpg", "/images/projects/model-farm-2.jpg", "/images/projects/model-farm-3.jpg"],
     progress: 0,
     goalLabel: "$20,000 target",
     status: "ongoing",
@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
     description:
       "Our Savings and Credit Cooperative Organization (SACCO) gives community members a safe place to save together and borrow affordably, strengthening financial independence and supporting small business growth across Kalaki. Youth can borrow at 5% interest for a 6-month term (one farming season), with Hope Makers Kalaki supervising and training each chosen venture to promote financial literacy and accountability.",
     location: "Kalaki District",
-    coverImage: "/images/projects/sacco.jpg",
+    images: [],
     progress: 0,
     goalLabel: "$10,000 target",
     status: "ongoing",
@@ -35,13 +35,18 @@ export const PROJECTS: Project[] = [
     id: "3",
     slug: "menstrual-hygiene-reusable-pads",
     title: "Menstrual Hygiene Initiative",
-    category: "women",
+    category: "education",
     summary:
       "Producing and distributing reusable sanitary pads so girls and women can manage menstrual health with dignity, without missing school or work.",
     description:
       "Through this initiative, we make and distribute reusable sanitary pads to girls and women across Kalaki, helping remove a major barrier to school attendance and daily life while promoting menstrual health education. Our goal is to provide 4,500 reusable pads to 1,500 teenage school-going girls across Kakure Subcounty schools.",
     location: "Kalaki District",
-    coverImage: "/images/projects/menstrual-hygiene.jpg",
+    images: [
+      "/images/projects/menstrual-hygiene.jpg",
+      "/images/projects/menstrual-hygiene-2.jpg",
+      "/images/projects/menstrual-hygiene-3.jpg",
+      "/images/projects/menstrual-hygiene-4.jpg",
+    ],
     progress: 0,
     goalLabel: "$3,500 target",
     status: "ongoing",
@@ -56,7 +61,7 @@ export const PROJECTS: Project[] = [
     description:
       "Our child and maternal care program supports mothers and children across Kalaki with community-based health support, helping families access the care they need to keep mothers and children healthy.",
     location: "Kalaki District",
-    coverImage: "/images/projects/child-maternal-care.jpg",
+    images: [],
     progress: 0,
     goalLabel: "Funding goal: TBD",
     status: "ongoing",
@@ -71,7 +76,7 @@ export const PROJECTS: Project[] = [
     description:
       "Kalaki Primary School has over 900 pupils sharing classrooms built for half that number. This project is constructing a permanent four-classroom block complete with furniture, lighting, and accessible entrances, directly benefiting 320 children.",
     location: "Kalaki Town Council",
-    coverImage: "/images/projects/education-classroom.jpg",
+    images: [],
     progress: 72,
     goalLabel: "UGX 180M goal",
     status: "ongoing",
@@ -86,7 +91,7 @@ export const PROJECTS: Project[] = [
     description:
       "This project establishes a shared tailoring workshop for a cooperative of 60 women, providing machines, fabric starter kits, and twelve weeks of business and financial literacy training.",
     location: "Ochero Sub-county",
-    coverImage: "/images/projects/women-tailoring.jpg",
+    images: ["/images/projects/women-tailoring.jpg"],
     progress: 55,
     goalLabel: "UGX 95M goal",
     status: "ongoing",
@@ -101,7 +106,7 @@ export const PROJECTS: Project[] = [
     description:
       "The center offers six-month certificate courses in carpentry, welding, tailoring, and basic digital literacy, pairing every graduate with a mentor and startup toolkit.",
     location: "Kalaki District Headquarters",
-    coverImage: "/images/projects/youth-vocational.jpg",
+    images: ["/images/projects/youth-vocational.jpg"],
     progress: 40,
     goalLabel: "UGX 240M goal",
     status: "ongoing",
@@ -116,7 +121,7 @@ export const PROJECTS: Project[] = [
     description:
       "The Girls' Scholarship Fund covers tuition, scholastic materials, and sanitary supplies for 150 girls, paired with mentorship circles to support their transition through secondary school.",
     location: "Kalaki District",
-    coverImage: "/images/projects/girls-scholarship.jpg",
+    images: [],
     progress: 100,
     goalLabel: "UGX 210M goal",
     status: "completed",
