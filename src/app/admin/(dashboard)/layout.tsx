@@ -6,6 +6,11 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
+// These pages query the database directly in Server Components. Force dynamic
+// rendering so `next build` never tries to prerender them (and run those queries)
+// at build time, when no DATABASE_URL is reachable.
+export const dynamic = "force-dynamic";
+
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex min-h-screen bg-muted/30">
