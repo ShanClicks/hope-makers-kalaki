@@ -20,6 +20,11 @@ const PROGRAM_VIDEO_BY_SLUG: Record<string, { url: string; label: string }> = {
   "maternal-child-healthcare": { url: "https://www.youtube.com/embed/d2WDIzVhSqM", label: "Health Outreach" },
 };
 
+const PROGRAM_HEADING_BY_SLUG: Record<string, string> = {
+  "youth-empowerment": "Real Skills for a Real Future",
+  "maternal-child-healthcare": "Care That Reaches Every Corner of Kalaki",
+};
+
 export function generateStaticParams() {
   return FOCUS_AREAS.map((area) => ({ slug: area.slug }));
 }
@@ -51,6 +56,7 @@ export default async function ProgramDetailPage({
   const relatedProjects = PROJECTS.filter((p) => p.category === area.id);
   const isYouthEmpowerment = area.slug === "youth-empowerment";
   const video = PROGRAM_VIDEO_BY_SLUG[area.slug];
+  const videoSectionHeading = PROGRAM_HEADING_BY_SLUG[area.slug];
 
   return (
     <>
@@ -76,15 +82,8 @@ export default async function ProgramDetailPage({
 
         {video ? (
           <>
-            {isYouthEmpowerment ? (
-              <h2 className="mt-6 text-center text-3xl sm:text-4xl">Real Skills for a Real Future</h2>
-            ) : stat ? (
-              <div className="mt-6 flex justify-center">
-                <span className="w-fit rounded-full bg-secondary px-4 py-1.5 text-sm font-semibold text-secondary-foreground">
-                  {stat.value.toLocaleString()}
-                  {stat.suffix} {stat.label}
-                </span>
-              </div>
+            {videoSectionHeading ? (
+              <h2 className="mt-6 text-center text-3xl sm:text-4xl">{videoSectionHeading}</h2>
             ) : null}
 
             <Reveal className="mt-10 grid gap-10 lg:grid-cols-2 lg:items-center">
