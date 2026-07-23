@@ -1,8 +1,7 @@
 import type { ComponentType } from "react";
-import { FaFacebook, FaInstagram, FaTiktok, FaYoutube } from "react-icons/fa6";
+import { FaFacebook, FaLinkedin, FaTiktok, FaYoutube } from "react-icons/fa6";
 import { Reveal } from "@/components/common/reveal";
 
-// TODO: placeholder links — swap for real profile URLs once handles are confirmed.
 const PLATFORMS: {
   id: string;
   name: string;
@@ -15,28 +14,28 @@ const PLATFORMS: {
     name: "Facebook",
     icon: FaFacebook,
     description: "Community updates, program milestones, and event photos from across Kalaki.",
-    href: "#",
+    href: "https://www.facebook.com/profile.php?id=61591878245627",
   },
   {
-    id: "instagram",
-    name: "Instagram",
-    icon: FaInstagram,
-    description: "Behind-the-scenes moments and visual stories from our programs.",
-    href: "#",
+    id: "linkedin",
+    name: "LinkedIn",
+    icon: FaLinkedin,
+    description: "Organizational updates, partnerships, and professional milestones from our team.",
+    href: "https://www.linkedin.com/company/135127421/admin/feed/following/",
   },
   {
     id: "tiktok",
     name: "TikTok",
     icon: FaTiktok,
     description: "Short clips capturing the energy and impact of our work in the field.",
-    href: "#",
+    href: "https://www.tiktok.com/@hopemakerskalaki?_r=1&_t=ZS-988hQV7zCc9",
   },
   {
     id: "youtube",
     name: "YouTube",
     icon: FaYoutube,
     description: "In-depth videos, interviews, and stories from our programs.",
-    href: "#",
+    href: "https://www.youtube.com/@HopeMakersKalaki",
   },
 ];
 
@@ -84,6 +83,8 @@ export function FollowOurWork() {
                   <p className="flex-1 text-sm leading-6 text-muted-foreground">{platform.description}</p>
                   <a
                     href={platform.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded-xl border border-primary px-4 py-2 text-sm font-semibold text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
                   >
                     Follow
@@ -110,6 +111,8 @@ export function FollowOurWork() {
                 <a
                   key={platform.id}
                   href={platform.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-primary transition-colors hover:bg-white/90"
                 >
                   <Icon className="size-4" />
